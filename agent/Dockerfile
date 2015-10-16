@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-ENV VERSION "0.25.0"
+ENV VERSION "0.25.0-0.2.70.ubuntu1404"
 
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
