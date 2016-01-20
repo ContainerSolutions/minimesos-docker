@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
-ENV VERSION "0.25.0-0.2.70.ubuntu1404"
+ENV VERSION "0.26.0-0.2.145.ubuntu1404"
 
 RUN echo "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" > /etc/apt/sources.list.d/openjdk.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv 86F44E2A && \
@@ -15,7 +15,7 @@ RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" > /etc/apt/sources.
     apt-get -y install curl mesos=${VERSION} && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl -so /usr/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.8.3 && chmod +x /usr/bin/docker
-    
+RUN curl -so /usr/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 && chmod +x /usr/bin/docker
+
 CMD ["--registry=in_memory"]
 ENTRYPOINT ["mesos-master"]
