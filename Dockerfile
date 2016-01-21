@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
-ENV VERSION "0.26.0-0.2.145.ubuntu1404"
+ENV VERSION "0.25.0-0.2.70.ubuntu1404"
 
 RUN echo "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" > /etc/apt/sources.list.d/openjdk.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv 86F44E2A && \
