@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd base
-docker build -t containersol/mesos-base:0.1.0 .
+docker build -t containersol/mesos-base:latest .
 cd ..
 
 cd 0.25.0-0.2.70.ubuntu1404

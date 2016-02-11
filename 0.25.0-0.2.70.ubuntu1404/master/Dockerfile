@@ -1,4 +1,4 @@
-FROM containersol/mesos-base:0.1.0
+FROM containersol/mesos-base:latest
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
 ENV VERSION "0.25.0-0.2.70.ubuntu1404"
