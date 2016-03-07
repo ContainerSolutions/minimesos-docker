@@ -10,5 +10,6 @@ RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" > /etc/apt/sources.
     rm -rf /var/lib/apt/lists/*
 
 ADD ./mesos-slave-wrapper /usr/local/bin/mesos-slave-wrapper
+ADD ./docker /usr/local/bin/docker
 
 ENTRYPOINT ["/usr/local/bin/mesos-slave-wrapper"]
