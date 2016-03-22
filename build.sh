@@ -1,22 +1,21 @@
 #!/bin/bash
 
-
 buildVersion() {
-    cd $1
-
-    cd agent
-    docker build -t containersol/mesos-agent:$1 .
-    cd ..
-
-    cd master
-    docker build -t containersol/mesos-master:$1 .
-    cd ..
-    cd ..
+  for i in agent master; do
+    docker build \
+      -t containersol/mesos-${i}:$1 \
+      -f $1/agent/Dockerfile \
+      .
+  done
 }
 
-cd base
-docker build -t containersol/mesos-base:latest .
-cd ..
+docker build -t containersol/alpine3.3-java8-jre:v1 alpine3.3-java8-jre
+
+# TODO this should not be "latest"
+docker build \
+  -t containersol/mesos-base:latest \
+  -f base/Dockerfile \
+  .
 
 buildVersion "0.25.0-0.2.70.ubuntu1404"
 buildVersion "0.26.0-0.2.145.ubuntu1404"
