@@ -1,7 +1,8 @@
 FROM containersol/mesos-base:latest
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
-ENV VERSION "0.26.0-0.2.145.ubuntu1404"
+ARG MESOS_VERSION
+ENV VERSION ${MESOS_VERSION}
 
 RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" > /etc/apt/sources.list.d/mesosphere.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
@@ -9,6 +10,4 @@ RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" > /etc/apt/sources.
     apt-get -y install mesos=${VERSION} && \
     rm -rf /var/lib/apt/lists/*
 
-ADD ./mesos-slave-wrapper /usr/local/bin/mesos-slave-wrapper
-
-ENTRYPOINT ["/usr/local/bin/mesos-slave-wrapper"]
+ENTRYPOINT ["mesos-slave", "--no-hostname_lookup"]

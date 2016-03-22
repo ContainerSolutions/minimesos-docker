@@ -1,10 +1,13 @@
 #!/bin/bash
 
 buildVersion() {
-  for i in agent master; do
+  for role in agent master; do
+    echo
+    echo Building containersol/mesos-${role}:${1}
     docker build \
-      -t containersol/mesos-${i}:$1 \
-      -f $1/agent/Dockerfile \
+      -t containersol/mesos-${role}:${1} \
+      -f mesos-image/${role}/Dockerfile \
+      --build-arg MESOS_VERSION=${1} \
       . || exit $?
   done
 }
