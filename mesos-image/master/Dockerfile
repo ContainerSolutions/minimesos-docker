@@ -1,4 +1,4 @@
-FROM containersol/mesos-base:latest
+FROM containersol/mesos-base:0.1.0
 MAINTAINER Container Solutions BV <info@container-solutions.com>
 
 ARG MESOS_VERSION
