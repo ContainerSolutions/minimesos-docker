@@ -16,9 +16,8 @@ docker build \
   -t containersol/alpine3.3-java8-jre:v1 \
   alpine3.3-java8-jre || exit $?
 
-# TODO this should not be "latest"
 docker build \
-  -t containersol/mesos-base:latest \
+  -t containersol/mesos-base:0.1.0 \
   -f base/Dockerfile \
   . || exit $?
 
