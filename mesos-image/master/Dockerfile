@@ -11,4 +11,4 @@ RUN echo "deb http://repos.mesosphere.com/ubuntu trusty main" > /etc/apt/sources
     rm -rf /var/lib/apt/lists/*
 
 CMD ["--registry=in_memory"]
-ENTRYPOINT ["mesos-master"]
+ENTRYPOINT ["mesos-master", "--no-hostname_lookup", "true"]
