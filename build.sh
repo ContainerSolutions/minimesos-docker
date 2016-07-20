@@ -12,14 +12,9 @@ buildImage() {
 
   for role in agent master; do
     echo
-    echo Building containersol/mesos-${role}-${MESOS_VERSION}:${MINIMESOS_DOCKER_VERSION}
+    echo Building containersol/mesos-${role}:${MESOS_VERSION}-${MINIMESOS_DOCKER_VERSION}
     docker build \
-      -t containersol/mesos-${role}-${MESOS_VERSION}:${MINIMESOS_DOCKER_VERSION} \
-      -f mesos-image/${role}/Dockerfile \
-      --build-arg MESOS_VERSION=${MESOS_VERSION}-${MESOSPHERE_TAG} \
-      . || exit $?
-    docker build \
-      -t containersol/mesos-${role}-${MESOS_VERSION}:latest \
+      -t containersol/mesos-${role}:${MESOS_VERSION}-${MINIMESOS_DOCKER_VERSION} \
       -f mesos-image/${role}/Dockerfile \
       --build-arg MESOS_VERSION=${MESOS_VERSION}-${MESOSPHERE_TAG} \
       . || exit $?

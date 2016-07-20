@@ -15,9 +15,8 @@ pushImage() {
 
   for role in agent master; do
     echo
-    echo Pushing containersol/mesos-${role}-${MESOS_VERSION}:${MINIMESOS_DOCKER_VERSION}
-    docker push containersol/mesos-${role}-${MESOS_VERSION}:${MINIMESOS_DOCKER_VERSION} || exit $?
-    docker push containersol/mesos-${role}-${MESOS_VERSION}:latest || exit $?
+    echo Pushing containersol/mesos-${role}:${MESOS_VERSION}-${MINIMESOS_DOCKER_VERSION}
+    docker push containersol/mesos-${role}:${MESOS_VERSION}-${MINIMESOS_DOCKER_VERSION} || exit $?
   done
 
 }
