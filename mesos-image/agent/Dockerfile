@@ -5,6 +5,7 @@ ARG MESOS_VERSION
 ENV VERSION ${MESOS_VERSION}
 
 RUN echo "deb http://repos.mesosphere.com/ubuntu trusty main" > /etc/apt/sources.list.d/mesosphere.list && \
+	echo "deb http://repos.mesosphere.com/ubuntu trusty-testing main" >> /etc/apt/sources.list.d/mesosphere.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
     apt-get update && \
     apt-get -y install mesos=${VERSION} && \
