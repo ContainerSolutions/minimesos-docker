@@ -28,4 +28,4 @@ pushImage "0.27.0"       "0.2.190.ubuntu1404"
 pushImage "0.27.1"       "2.0.226.ubuntu1404"
 pushImage "0.28.0"       "2.0.16.ubuntu1404"
 pushImage "0.28.1"       "2.0.20.ubuntu1404"
-
+pushImage "1.0.0"	  	 "2.0.89.ubuntu1404"
